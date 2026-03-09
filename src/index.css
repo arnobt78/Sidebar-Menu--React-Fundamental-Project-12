@@ -258,6 +258,7 @@ Project CSS
 ===============
 */
 
+/* Full-height centered container for all page content (Home, Team, Projects, etc.) */
 main {
   min-height: 100vh;
   display: flex;
@@ -265,6 +266,31 @@ main {
   align-items: center;
   background: var(--grey-100);
 }
+
+/* Wrapper for route content: max-width + stacked layout + gap; used by all pages for consistent UX */
+.page-content {
+  max-width: 40rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.page-content h1 {
+  margin-bottom: 0.25rem;
+}
+
+.page-content p {
+  max-width: 40em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Fixed hamburger button; toggles sidebar via context (Layout.jsx) */
 .sidebar-toggle {
   position: fixed;
   top: 2rem;
@@ -291,7 +317,7 @@ main {
 
 /*
 =============== 
-Modal
+Modal (Modal.jsx: overlay + container; show-modal class when isModalOpen is true)
 ===============
 */
 
@@ -340,7 +366,7 @@ Modal
 
 /*
 =============== 
-Sidebar
+Sidebar (Sidebar.jsx: show-sidebar class when isSidebarOpen is true)
 ===============
 */
 

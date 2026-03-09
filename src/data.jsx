@@ -1,3 +1,7 @@
+/**
+ * Single source of truth for sidebar: nav links (routes) and social links (external URLs).
+ * Add/remove items here; Sidebar.jsx maps over these arrays. URLs in links must match Route paths in App.jsx.
+ */
 import React from "react";
 import {
   FaBehance,
@@ -11,6 +15,8 @@ import {
   FaCalendarAlt,
   FaWpforms,
 } from "react-icons/fa";
+
+/** In-app navigation: url is the path used by React Router (e.g. /team). */
 export const links = [
   {
     id: 1,
@@ -44,6 +50,7 @@ export const links = [
   },
 ];
 
+/** External links: rendered as <a target="_blank"> in Sidebar (open in new tab). */
 export const social = [
   {
     id: 1,

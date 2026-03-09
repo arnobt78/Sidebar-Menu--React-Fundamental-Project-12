@@ -1,3 +1,7 @@
+/**
+ * Sidebar: nav links (in-app via React Router Link) and social links (external, new tab).
+ * Data comes from data.jsx; show-sidebar class controls visibility via CSS.
+ */
 import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import { social, links } from './data';
@@ -14,6 +18,7 @@ const Sidebar = () => {
           <FaTimes />
         </button>
       </div>
+      {/* In-app navigation: Link avoids full reload; closeSidebar for better UX */}
       <ul className="links">
         {links.map((link) => {
           const { id, url, text, icon } = link;
@@ -27,6 +32,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
+      {/* External links: open in new tab; rel="noopener noreferrer" for security */}
       <ul className="social-links">
         {social.map((link) => {
           const { id, url, icon } = link;

@@ -1,3 +1,7 @@
+/**
+ * Modal overlay: visibility is driven by isModalOpen from context.
+ * show-modal class is used in CSS for visibility/opacity; without it the overlay is hidden.
+ */
 import { FaTimes } from 'react-icons/fa';
 import { useGlobalContext } from './context';
 
