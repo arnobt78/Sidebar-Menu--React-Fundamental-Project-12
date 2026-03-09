@@ -422,7 +422,7 @@ Sidebar (Sidebar.jsx: show-sidebar class when isSidebarOpen is true)
   letter-spacing: var(--letterSpacing);
 }
 .links a:hover {
-  background: var(--grey-100);
+  background: var(--grey-200);
   color: var(--grey-800);
 }
 .links a svg {
@@ -443,9 +443,12 @@ Sidebar (Sidebar.jsx: show-sidebar class when isSidebarOpen is true)
 .social-links a {
   font-size: 1.5rem;
   margin: 0 0.5rem;
+  padding: 0.35rem;
+  border-radius: var(--borderRadius);
   color: var(--primary-500);
   transition: var(--transition);
 }
 .social-links a:hover {
   color: var(--primary-800);
+  background: var(--primary-100);
 }
