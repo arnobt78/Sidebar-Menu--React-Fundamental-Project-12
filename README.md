@@ -1,12 +1,6 @@
-# Sidebar - React Fundamental Project 12
+# Sidebar Menu Router - React, Vite, JavaScript, Context API, Custom CSS Fundamental Project 12
 
-<img width="941" alt="Screenshot 2025-02-09 at 16 10 43" src="https://github.com/user-attachments/assets/85af76e7-b3b1-44ee-9b2f-9a4252d2d010" />
-
----
-
-A hands-on, educational project demonstrating how to use React's Context API to manage a global UI state for modals and sidebars. This project is a great entry point for learning about modern React patterns, component composition, and state management. It features modular, reusable components, clear structure, and practical state sharing via custom hooks.
-
-- **Live-Demo:** [https://sidebar-arnob.netlify.app/](https://sidebar-arnob.netlify.app/)
+- **Live Demo:** []()
 
 ---
 
@@ -69,6 +63,7 @@ This project is a simple but robust React application that demonstrates how to u
 ├── vite.config.js
 └── README.md
 ```
+
 - **/src**: Contains all React source files.
 - **public/**: Static/public assets.
 - **index.html**: Root HTML template.
@@ -102,23 +97,32 @@ This project is a simple but robust React application that demonstrates how to u
 ## Getting Started
 
 1. **Clone the repository:**
+
    ```sh
    git clone https://github.com/arnobt78/Sidebar--React-Fundamental-Project-12.git
    cd Sidebar--React-Fundamental-Project-12
    ```
+
 2. **Install dependencies:**
+
    ```sh
    npm install
    ```
+
 3. **Run locally:**
+
    ```sh
    npm run dev
    ```
+
 4. **Build for production:**
+
    ```sh
    npm run build
    ```
+
 5. **Preview production build:**
+
    ```sh
    npm run preview
    ```
@@ -130,9 +134,9 @@ This project is a simple but robust React application that demonstrates how to u
 ### App.jsx
 
 ```jsx
-import Home from './Home';
-import Modal from './Modal';
-import Sidebar from './Sidebar';
+import Home from "./Home";
+import Modal from "./Modal";
+import Sidebar from "./Sidebar";
 
 const App = () => {
   return (
@@ -145,6 +149,7 @@ const App = () => {
 };
 export default App;
 ```
+
 - Renders all main UI components.
 
 ---
@@ -152,18 +157,18 @@ export default App;
 ### Home.jsx
 
 ```jsx
-import { useGlobalContext } from './context';
-import { FaBars } from 'react-icons/fa';
+import { useGlobalContext } from "./context";
+import { FaBars } from "react-icons/fa";
 
 const Home = () => {
   const { openSidebar, openModal } = useGlobalContext();
 
   return (
     <main>
-      <button onClick={openSidebar} className='sidebar-toggle'>
+      <button onClick={openSidebar} className="sidebar-toggle">
         <FaBars />
       </button>
-      <button onClick={openModal} className='btn'>
+      <button onClick={openModal} className="btn">
         show modal
       </button>
     </main>
@@ -171,6 +176,7 @@ const Home = () => {
 };
 export default Home;
 ```
+
 - Two buttons: open sidebar and open modal, using context methods.
 
 ---
@@ -178,22 +184,22 @@ export default Home;
 ### Sidebar.jsx
 
 ```jsx
-import logo from './logo.svg';
-import { social, links } from './data';
-import { FaTimes } from 'react-icons/fa';
-import { useGlobalContext } from './context';
+import logo from "./logo.svg";
+import { social, links } from "./data";
+import { FaTimes } from "react-icons/fa";
+import { useGlobalContext } from "./context";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
-    <aside className={isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}>
-      <div className='sidebar-header'>
-        <img src={logo} alt='coding addict' className='logo' />
-        <button className='close-btn' onClick={closeSidebar}>
+    <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
+      <div className="sidebar-header">
+        <img src={logo} alt="coding addict" className="logo" />
+        <button className="close-btn" onClick={closeSidebar}>
           <FaTimes />
         </button>
       </div>
-      <ul className='links'>
+      <ul className="links">
         {links.map((link) => {
           const { id, url, text, icon } = link;
           return (
@@ -206,7 +212,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
-      <ul className='social-links'>
+      <ul className="social-links">
         {social.map((link) => {
           const { id, url, icon } = link;
           return (
@@ -221,6 +227,7 @@ const Sidebar = () => {
 };
 export default Sidebar;
 ```
+
 - Renders a sidebar with navigation and social icons, controlled by context state.
 
 ---
@@ -228,15 +235,15 @@ export default Sidebar;
 ### Modal.jsx
 
 ```jsx
-import { FaTimes } from 'react-icons/fa';
-import { useGlobalContext } from './context';
+import { FaTimes } from "react-icons/fa";
+import { useGlobalContext } from "./context";
 const Modal = () => {
   const { isModalOpen, closeModal } = useGlobalContext();
   return (
-    <div className={isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}>
-      <div className='modal-container'>
+    <div className={isModalOpen ? "modal-overlay show-modal" : "modal-overlay"}>
+      <div className="modal-container">
         <h3>modal content</h3>
-        <button className='close-modal-btn' onClick={closeModal}>
+        <button className="close-modal-btn" onClick={closeModal}>
           <FaTimes />
         </button>
       </div>
@@ -245,6 +252,7 @@ const Modal = () => {
 };
 export default Modal;
 ```
+
 - Shows a modal window when triggered by context state.
 
 ---
@@ -254,7 +262,7 @@ export default Modal;
 **context.jsx**
 
 ```jsx
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const AppContext = createContext();
 
@@ -285,6 +293,7 @@ export const AppProvider = ({ children }) => {
 
 export const useGlobalContext = () => useContext(AppContext);
 ```
+
 - Provides global UI state and methods to all components via custom hook.
 
 ---
@@ -305,24 +314,25 @@ import {
   FaFolderOpen,
   FaCalendarAlt,
   FaWpforms,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 export const links = [
-  { id: 1, url: '/', text: 'home', icon: <FaHome /> },
-  { id: 2, url: '/team', text: 'team', icon: <FaUserFriends /> },
-  { id: 3, url: '/projects', text: 'projects', icon: <FaFolderOpen /> },
-  { id: 4, url: '/calendar', text: 'calendar', icon: <FaCalendarAlt /> },
-  { id: 5, url: '/documents', text: 'documents', icon: <FaWpforms /> },
+  { id: 1, url: "/", text: "home", icon: <FaHome /> },
+  { id: 2, url: "/team", text: "team", icon: <FaUserFriends /> },
+  { id: 3, url: "/projects", text: "projects", icon: <FaFolderOpen /> },
+  { id: 4, url: "/calendar", text: "calendar", icon: <FaCalendarAlt /> },
+  { id: 5, url: "/documents", text: "documents", icon: <FaWpforms /> },
 ];
 
 export const social = [
-  { id: 1, url: 'https://www.twitter.com', icon: <FaFacebook /> },
-  { id: 2, url: 'https://www.twitter.com', icon: <FaTwitter /> },
-  { id: 3, url: 'https://www.twitter.com', icon: <FaLinkedin /> },
-  { id: 4, url: 'https://www.twitter.com', icon: <FaBehance /> },
-  { id: 5, url: 'https://www.twitter.com', icon: <FaSketch /> },
+  { id: 1, url: "https://www.twitter.com", icon: <FaFacebook /> },
+  { id: 2, url: "https://www.twitter.com", icon: <FaTwitter /> },
+  { id: 3, url: "https://www.twitter.com", icon: <FaLinkedin /> },
+  { id: 4, url: "https://www.twitter.com", icon: <FaBehance /> },
+  { id: 5, url: "https://www.twitter.com", icon: <FaSketch /> },
 ];
 ```
+
 - Two arrays: `links` for navigation, `social` for social icons.
 
 ---
@@ -332,12 +342,23 @@ export const social = [
 - All styles are defined in `src/index.css`, including layout, transitions, and animations.
 - Sidebar slides in/out, modal fades in/out, and buttons have interactive styling.
 - Example CSS for modal and sidebar:
+
   ```css
-  .modal-overlay { /* ... */ }
-  .modal-container { /* ... */ }
-  .sidebar { /* ... */ }
-  .show-sidebar { /* ... */ }
-  .sidebar-toggle { /* ... */ }
+  .modal-overlay {
+    /* ... */
+  }
+  .modal-container {
+    /* ... */
+  }
+  .sidebar {
+    /* ... */
+  }
+  .show-sidebar {
+    /* ... */
+  }
+  .sidebar-toggle {
+    /* ... */
+  }
   /* ...more in src/index.css */
   ```
 
@@ -346,6 +367,7 @@ export const social = [
 ## Learning Outcomes
 
 By studying or extending this project, you'll learn:
+
 - How to use React Context API for global UI state.
 - How to build and compose reusable functional components.
 - How to manage and share state with custom hooks.
@@ -364,8 +386,9 @@ By studying or extending this project, you'll learn:
 ## Example: Full Code Usage
 
 **Minimal Example: Open Sidebar from Any Component**
+
 ```jsx
-import { useGlobalContext } from './context';
+import { useGlobalContext } from "./context";
 
 function AnyComponent() {
   const { openSidebar } = useGlobalContext();
@@ -374,14 +397,35 @@ function AnyComponent() {
 ```
 
 **How to Provide Context Globally**
-```jsx
-import { AppProvider } from './context';
+
+````jsx
+import { AppProvider } from "./context";
 
 ReactDOM.render(
   <AppProvider>
     <App />
   </AppProvider>,
-  document.getElementById('root')
+  document.getElementById("root"),rom Any Component**
+
+```jsx
+import { useGlobalContext } from './context';
+
+function AnyComponent() {
+  const { openSidebar } = useGlobalContext();
+  return <button onClick={openSidebar}>Open Sidebar</button>;
+}
+````
+
+**How to Provide Context Globally**
+
+```jsx
+import { AppProvider } from "./context";
+
+ReactDOM.render(
+  <AppProvider>
+    <App />
+  </AppProvider>,
+  document.getElementById("root"),
 );
 ```
 
