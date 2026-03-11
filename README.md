@@ -11,7 +11,9 @@ An educational React application that demonstrates a sidebar menu and modal dial
 
 - **Live Demo:** [https://sidebar-router.vercel.app/](https://sidebar-router.vercel.app/)
 
-<img width="1806" height="953" alt="Screenshot 2026-03-11 at 15 43 35" src="https://github.com/user-attachments/assets/de2b03ff-60f9-4b20-a0ee-13f745ec239e" /> <img width="1821" height="913" alt="Screenshot 2026-03-11 at 15 43 47" src="https://github.com/user-attachments/assets/51db12a7-8814-4750-9f98-6245b584a8a0" /> <img width="1758" height="888" alt="Screenshot 2026-03-11 at 15 43 54" src="https://github.com/user-attachments/assets/53b8ab78-ec27-4ed1-9ffd-31b42edd2326" />
+![Screenshot 2026-03-11 at 15 43 35](https://github.com/user-attachments/assets/de2b03ff-60f9-4b20-a0ee-13f745ec239e)
+![Screenshot 2026-03-11 at 15 43 47](https://github.com/user-attachments/assets/51db12a7-8814-4750-9f98-6245b584a8a0)
+![Screenshot 2026-03-11 at 15 43 54](https://github.com/user-attachments/assets/53b8ab78-ec27-4ed1-9ffd-31b42edd2326)
 
 ## Table of Contents
 
